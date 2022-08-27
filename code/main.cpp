@@ -16,6 +16,7 @@ std::string outputApple(){      // 50% probability
 }
 
 int main() {
+    std::cout << "Git is strength\n";
     /*srand(static_cast<unsigned int>(time(0)));
     int apllleNum = rand() % 100;   //11
     int banana = rand() % 100;  //98
