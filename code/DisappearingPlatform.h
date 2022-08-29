@@ -9,6 +9,7 @@ private:
     bool flag;
 public:
     DisappearingPlatform(const float &layerHeight, const float &current, bool flag, const char* fileName = FILENAMEDISAPPEARINGPLATFORM);
+    DisappearingPlatform(Platform* otherPlatform, const char* fileName = FILENAMEDISAPPEARINGPLATFORM);
     virtual const char* getPlatformType() const override;
     int getFramesCounter() const;
     bool getFlag() const;

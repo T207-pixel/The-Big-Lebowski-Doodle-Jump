@@ -8,6 +8,7 @@ private:
     int transparency;
 public:
     RemovablePlatform(const float &layerHeight, const float &current, bool flag, const char* fileName = FILENAMEREMOVABLEPLATFORM);
+    RemovablePlatform(Platform* otherPlatform, const char* fileName = FILENAMEREMOVABLEPLATFORM);
     virtual const char* getPlatformType() const;
     int getFrames() const;
     bool getFlag() const;

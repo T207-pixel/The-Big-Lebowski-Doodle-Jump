@@ -3,6 +3,10 @@
 RemovablePlatform::RemovablePlatform(const float &layerHeight, const float &current, bool flag, const char* fileName)
     : Platform(layerHeight, current, flag, fileName), frames(0), flagRem(false), transparency(255){}
 
+RemovablePlatform::RemovablePlatform(Platform* otherPlatform, const char* fileName) : Platform(otherPlatform, fileName),
+    frames(dynamic_cast<RemovablePlatform*>(otherPlatform)->frames), flagRem(dynamic_cast<RemovablePlatform*>(otherPlatform)->flagRem),
+    transparency(dynamic_cast<RemovablePlatform*>(otherPlatform)->transparency) {}
+
 int RemovablePlatform::getFrames() const{
     return  frames;
 }

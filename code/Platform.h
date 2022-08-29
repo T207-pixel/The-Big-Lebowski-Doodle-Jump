@@ -15,6 +15,7 @@ protected:
     float platformHeight;
 public:
     Platform(const float &layerHeight, const float &current, bool flag, const char* fileName = FILENAMEPLATFORM);
+    Platform(const Platform* otherPlatform, const char* fileMame = FILENAMEPLATFORM);
     void setPlatformRandomPosition(const float &layerHeight, const float &current, bool flag);
     void setLowerMapPlatforms(const float &xRandomCoordinate, const float &layerHeight, const float &current);
     void setUpperMapPlatforms(const float &xRandomCoordinate, const float &layerHeight, const float &current);

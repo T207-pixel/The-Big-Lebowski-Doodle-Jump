@@ -5,6 +5,9 @@ HorizontalPlatform::HorizontalPlatform(const float &layerHeight, const float &cu
     speedDependencyOnPointsInit(score);
 }
 
+HorizontalPlatform::HorizontalPlatform(Platform* otherPlatform, const char* fileName) : Platform(otherPlatform, fileName),
+    horizontalSpeed(dynamic_cast<HorizontalPlatform*>(otherPlatform)->horizontalSpeed) {}
+
 const char* HorizontalPlatform::getPlatformType() const{
     return "horizontalPlatform";
 }

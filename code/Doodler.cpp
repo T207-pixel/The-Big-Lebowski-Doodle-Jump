@@ -10,7 +10,7 @@ Doodler::Doodler(){
     doodlerSpeedY = STARTSPEEDY;
     doodlerSpeedX = 0;
     doodlerSprite.setOrigin(doodlerWidth/2, doodlerHeight/2);
-    doodlerSprite.setPosition(BACKGROUNDWIDTH/2,  BACKGROUNDHEIGHT - doodlerSprite.getOrigin().y);
+    doodlerSprite.setPosition(BACKGROUNDWIDTH/2,  BACKGROUNDHEIGHT - 155);
 }
 
 const sf::Sprite &Doodler::getDoodlerSpriteConst() const{

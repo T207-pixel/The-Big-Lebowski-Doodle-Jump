@@ -46,7 +46,7 @@ void Camera::moveCamera(Doodler& doodler, sf::Sprite &mapSprite, Scores &scores)
         newPosition = position;
 }
 
-void Camera::putDown(Map &map, Map &nextMap, Doodler &doodler, Scores &scores){
+void Camera::putDown(Map &map, Map &nextMap, Doodler &doodler, Scores &scores, PlatformAppearanceProbability &appearanceProbability){
     if (map.getMapSpriteConst().getPosition().y <= (-1) * BACKGROUNDHEIGHT / 2 ){
         //moving "map" to the first level
         map.setPlatformQuantity(nextMap.getPlatformQuantityConst());//debug
@@ -58,12 +58,12 @@ void Camera::putDown(Map &map, Map &nextMap, Doodler &doodler, Scores &scores){
         //relocating platforms on the map when "map" has same coordinates as "newMap"
         relocatingLowerMapPlatforms(map, nextMap, scores);
         //reorganise upper map ("nextMap")
-        MapNextLvlProcessing(nextMap, map, scores);
+        MapNextLvlProcessing(nextMap, map, scores, appearanceProbability);
     }
 }
 
 void Camera::relocatingLowerMapPlatforms(Map &map, Map &nextMap, Scores &scores){
-    for (int i = 0; i < nextMap.getPlatformQuantityConst(); i++){
+    /*for (int i = 0; i < nextMap.getPlatformQuantityConst(); i++){
         // if type disappearing platform and flag == true use copy constructor or copy needed fields
         map.getPlatformVector()[i]->setPlatformPositionY(nextMap.getPlatformVector()[i]->getPlatformSpriteConst().getPosition().y + BACKGROUNDHEIGHT); // set new position for new platforms
         map.getPlatformVector()[i]->setPlatformPositionX(nextMap.getPlatformVector()[i]->getPlatformSpriteConst().getPosition().x);
@@ -80,6 +80,35 @@ void Camera::relocatingLowerMapPlatforms(Map &map, Map &nextMap, Scores &scores)
             for (int j = 0; j < nextMap.getPlatformQuantityConst(); j++)
                 *dynamic_cast<RemovablePlatform*>(map.getPlatformVector()[j]) = *dynamic_cast<RemovablePlatform*>(nextMap.getPlatformVector()[j]);
         }
+    }*/
+    ///remake///
+    map.deletePlatforms();
+    for (int i = 0; i < nextMap.getPlatformQuantityConst(); i++){
+        const char* platformType = nextMap.getPlatformVector()[i]->getPlatformType();
+        if (strcmp(platformType, "usualPlatform") == 0){
+            auto* newPlatform = new Platform(nextMap.getPlatformVector()[i]);
+            map.getPlatformVector().emplace_back(newPlatform);
+        }
+        else if (strcmp(platformType, "fallingPlatform") == 0){
+            auto* newPlatform = new FallingPlatform(nextMap.getPlatformVector()[i]);
+            map.getPlatformVector().emplace_back(newPlatform);
+        }
+        else if (strcmp(platformType, "horizontalPlatform") == 0){
+            auto* newPlatform = new HorizontalPlatform(nextMap.getPlatformVector()[i]);
+            map.getPlatformVector().emplace_back(newPlatform);
+        }
+        else if (strcmp(platformType, "disappearingPlatform") == 0){
+            auto* newPlatform = new DisappearingPlatform(nextMap.getPlatformVector()[i]);
+            map.getPlatformVector().emplace_back(newPlatform);
+        }
+        else if (strcmp(platformType, "removablePlatform") == 0){
+            auto* newPlatform = new RemovablePlatform(nextMap.getPlatformVector()[i]);
+            map.getPlatformVector().emplace_back(newPlatform);
+        }
+        else if (strcmp(platformType, "twitchingPlatform") == 0){
+            auto* newPlatform = new TwitchingPlatform(nextMap.getPlatformVector()[i]);
+            map.getPlatformVector().emplace_back(newPlatform);
+        }
     }
 }
 
@@ -90,16 +119,17 @@ void Camera::randomisePositionForNewMapPlatforms(Map &nextMap){
     }
 }
 
-void Camera::MapNextLvlProcessing(Map &nextMap, Map &map, Scores &scores){
+void Camera::MapNextLvlProcessing(Map &nextMap, Map &map, Scores &scores, PlatformAppearanceProbability &appearanceProbability){
     int previousQuantity = nextMap.getPlatformQuantityConst();
     scores.organisePlatformsQuantity(map, nextMap);
     int currentQuantity = nextMap.getPlatformQuantityConst();
     if (previousQuantity > currentQuantity){
         nextMap.deletePlatforms();
-        nextMap.generatePlatforms(false, scores.getScoresConst());
+        nextMap.generatePlatforms(false, scores.getScoresConst(), appearanceProbability);
     }
     else {
-        randomisePositionForNewMapPlatforms(nextMap);   //change positions of "nextMap" platforms if quantity did not changed
+        nextMap.deletePlatforms();
+        nextMap.generatePlatforms(false, scores.getScoresConst(), appearanceProbability);
     }
     map.setPlatformQuantity(previousQuantity);
 }

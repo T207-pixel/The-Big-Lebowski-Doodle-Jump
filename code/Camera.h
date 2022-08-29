@@ -19,8 +19,8 @@ public:
     void setNewPosition(const Doodler &doodler);
     void ifUpperThanCamLvl(const Doodler &doodler);
     void moveCamera(Doodler& doodler, sf::Sprite &mapSprite, Scores &scores);
-    void putDown(Map &map, Map &nextMap, Doodler &doodler, Scores &scores);
+    void putDown(Map &map, Map &nextMap, Doodler &doodler, Scores &scores, PlatformAppearanceProbability &appearanceProbability);
     static void relocatingLowerMapPlatforms(Map &map, Map &nextMap, Scores &scores);
     static void randomisePositionForNewMapPlatforms(Map &nextMap);
-    static void MapNextLvlProcessing(Map &nextMap, Map &map, Scores &scores);
+    static void MapNextLvlProcessing(Map &nextMap, Map &map, Scores &scores, PlatformAppearanceProbability &appearanceProbability);
 };

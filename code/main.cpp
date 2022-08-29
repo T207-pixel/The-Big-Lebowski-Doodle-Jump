@@ -7,31 +7,15 @@
 #include <iostream>
 //#include <ctime>
 
-std::string outputBanana(){     // 50% probability
-    std::cout << "BANANA\n";
-}
-
-std::string outputApple(){      // 50% probability
-    std::cout << "Apple\n";
-}
-
 int main() {
-    std::cout << "Git is strength\n";
-    /*srand(static_cast<unsigned int>(time(0)));
-    int apllleNum = rand() % 100;   //11
-    int banana = rand() % 100;  //98
-    if (apllleNum > 0 && apllleNum <= 50)
-        outputBanana();
-    else
-        outputApple();
-    return 0;*/
     srand(static_cast<unsigned int>(time(0)));
     sf::RenderWindow window(sf::VideoMode(BACKGROUNDWIDTH, BACKGROUNDHEIGHT), "Doodle jump");
     window.setFramerateLimit(FRAMELIMIT);
 
+    PlatformAppearanceProbability appearanceProbability;
     Scores scores;
-    Map map(STARTPLATFORMQUANTITY, true, scores.getScoresConst());
-    Map nextMap(STARTPLATFORMQUANTITY, false, scores.getScoresConst());
+    Map map(STARTPLATFORMQUANTITY, true, scores.getScoresConst(), appearanceProbability);
+    Map nextMap(STARTPLATFORMQUANTITY, false, scores.getScoresConst(), appearanceProbability);
     Doodler doodler;
     Camera camera;
     GameEngine gameEngine;
@@ -63,7 +47,7 @@ int main() {
 
         camera.ifUpperThanCamLvl(doodler);
         camera.moveCamera(doodler, map.getMapSprite(), scores);
-        camera.putDown(map, nextMap, doodler, scores);
+        camera.putDown(map, nextMap, doodler, scores, appearanceProbability);
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
         gameEngine.fallingPlatformAnimation(map.getPlatformVector());
         gameEngine.fallingPlatformAnimation(nextMap.getPlatformVector());

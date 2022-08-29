@@ -3,6 +3,9 @@
 FallingPlatform::FallingPlatform(const float &layerHeight, const float &current, bool flag, const char* fileName)
     : Platform(layerHeight, current, flag, fileName), fallingSpeed(STARTFALLINGPLATFORMSPEED) {}
 
+FallingPlatform::FallingPlatform(Platform* otherPlatform, const char* fileName) : Platform(otherPlatform, fileName),
+    fallingSpeed(dynamic_cast<FallingPlatform*>(otherPlatform)->fallingSpeed) {}
+
 void FallingPlatform::setPlatformFallingSpeed(const float &speed){
     fallingSpeed = speed;
 }

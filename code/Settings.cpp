@@ -29,7 +29,7 @@ const char *FILENAMEREMOVABLEPLATFORM = "/home/tim/C++/sfml/doodleJump/textures/
 const char *FILEMAMETWITCHINGPLATFORM = "/home/tim/C++/sfml/doodleJump/textures/twitching_platforms/pivo_small_cut.png";
 
 //FALLING PLATFORM CONSTANTS
-const float QUANTITYOFFRAMESFALLPLAT = 40;// make 40ty frames instead 30
+const float QUANTITYOFFRAMESFALLPLAT = 40;
 const float XPLATFORMSTARTPOSITION = 44.5;  //OK
 const float YPLATFORMSTARTPOSITION = 14.5;  //OK
 const float DISTANCETONEXTPLATFORMX = 90;   //OK
@@ -40,8 +40,8 @@ const float SIDESPEED = 2.8;          //OK
 const float STARTSPEEDY = -4.5;       //OK
 const float ACCELERATION = 0.03;      //OK
 //QUANTITY OF PLATFORMS IN THE GAME IN BEGINNING
-const float STARTPLATFORMQUANTITY = 7;//25
-const float ENDPLATFORMQUANTITY = 7;
+const float STARTPLATFORMQUANTITY = 12;//25
+const float ENDPLATFORMQUANTITY = 12;
 //CAMERA PARAMETERS
 const float CAMERALEVEL = 800;        //OK
 //START SCORES

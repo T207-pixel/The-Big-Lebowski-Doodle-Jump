@@ -3,6 +3,10 @@
 DisappearingPlatform::DisappearingPlatform(const float &layerHeight, const float &current, bool flag, const char* fileName)
         : Platform(layerHeight, current, flag, fileName), frames(0), flag(false), comparable(0), transparency(255) {}
 
+DisappearingPlatform::DisappearingPlatform(Platform* otherPlatform, const char* fileName) : Platform(otherPlatform, fileName),
+    frames(dynamic_cast<DisappearingPlatform*>(otherPlatform)->frames), comparable(dynamic_cast<DisappearingPlatform*>(otherPlatform)->comparable),
+    transparency(dynamic_cast<DisappearingPlatform*>(otherPlatform)->transparency), flag(dynamic_cast<DisappearingPlatform*>(otherPlatform)->flag) {}
+
 const char* DisappearingPlatform::getPlatformType() const{
     return "disappearingPlatform";
 }

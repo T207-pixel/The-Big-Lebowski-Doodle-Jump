@@ -29,6 +29,12 @@ Platform::Platform(const float &layerHeight, const float &current, bool flag, co
     setPlatformRandomPosition(layerHeight, current, flag);
 }
 
+Platform::Platform(const Platform* otherPlatform, const char* fileMame) : platformTexture(otherPlatform->platformTexture),
+    platformSprite(otherPlatform->platformSprite), platformWidth(otherPlatform->platformWidth), platformHeight(otherPlatform->platformHeight){
+    //platformSprite.setTexture(platformTexture);
+    platformSprite.move(0, BACKGROUNDHEIGHT);
+}
+
 void Platform::setPlatformRandomPosition(const float &layerHeight, const float &current, bool flag){
     float xPlatformLeftBound = platformWidth / 2;
     float xPlatformRightBound = BACKGROUNDWIDTH - platformWidth / 2;

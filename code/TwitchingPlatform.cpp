@@ -3,6 +3,10 @@
 TwitchingPlatform::TwitchingPlatform(const float &layerHeight, const float &current, bool flag, const char* fileName)
         : Platform(layerHeight, current, flag, fileName), horizontalSpeed(HORIZONTALSPEED * positiveOrNegativeUnit()), distance(MAXDISTANCE), flag(false) {}
 
+TwitchingPlatform::TwitchingPlatform(Platform* otherPlatform, const char* fileName) : Platform(otherPlatform, fileName),
+    horizontalSpeed(dynamic_cast<TwitchingPlatform*>(otherPlatform)->horizontalSpeed), distance(dynamic_cast<TwitchingPlatform*>(otherPlatform)->distance),
+    flag(dynamic_cast<TwitchingPlatform*>(otherPlatform)->flag) {}
+
 const char* TwitchingPlatform::getPlatformType() const{
     return "twitchingPlatform";
 }
