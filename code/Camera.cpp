@@ -27,6 +27,14 @@ void Camera::setNewPosition(const Doodler &doodler){
     newPosition = doodler.getDoodlerSpriteConst().getPosition().y;
 }
 
+float Camera::getNewPosition() const{
+    return newPosition;
+}
+
+float Camera::getPosition() const{
+    return position;
+}
+
 void Camera::ifUpperThanCamLvl(const Doodler &doodler){
     if (doodler.getDoodlerSpeedYConst() == STARTSPEEDY + ACCELERATION &&
             doodler.getDoodlerSpriteConst().getPosition().y < position){
@@ -39,7 +47,6 @@ void Camera::moveCamera(Doodler& doodler, sf::Sprite &mapSprite, Scores &scores)
         view.move(0, doodler.getDoodlerSpeedYConst());
         mapSprite.move(0, doodler.getDoodlerSpeedYConst());
         scores.setScores(scores.getScoresConst() + doodler.getDoodlerSpeedYConst() * SCORECOEF);
-        //std::cout << "Current score: " << scores.getScoresConst() << "\n";
         setPosition(position + doodler.getDoodlerSpeedYConst());
     }
     if (newPosition == position)
@@ -63,25 +70,6 @@ void Camera::putDown(Map &map, Map &nextMap, Doodler &doodler, Scores &scores, P
 }
 
 void Camera::relocatingLowerMapPlatforms(Map &map, Map &nextMap, Scores &scores){
-    /*for (int i = 0; i < nextMap.getPlatformQuantityConst(); i++){
-        // if type disappearing platform and flag == true use copy constructor or copy needed fields
-        map.getPlatformVector()[i]->setPlatformPositionY(nextMap.getPlatformVector()[i]->getPlatformSpriteConst().getPosition().y + BACKGROUNDHEIGHT); // set new position for new platforms
-        map.getPlatformVector()[i]->setPlatformPositionX(nextMap.getPlatformVector()[i]->getPlatformSpriteConst().getPosition().x);
-        if (strcmp(nextMap.getPlatformVector()[i]->getPlatformType(), "disappearingPlatform") == 0){
-            if (dynamic_cast<DisappearingPlatform*>(nextMap.getPlatformVector()[i])->getFlag() == true){
-                *dynamic_cast<DisappearingPlatform*>(map.getPlatformVector()[i]) = *dynamic_cast<DisappearingPlatform*>(nextMap.getPlatformVector()[i]);
-            }
-        }
-        if (strcmp(nextMap.getPlatformVector()[i]->getPlatformType(), "horizontalPlatform") == 0){
-            dynamic_cast<HorizontalPlatform *>(nextMap.getPlatformVector()[i])->speedDependencyRealocate(scores.getScoresConst());
-            *dynamic_cast<HorizontalPlatform*>(map.getPlatformVector()[i]) = *dynamic_cast<HorizontalPlatform*>(nextMap.getPlatformVector()[i]);
-        }
-        if (strcmp(nextMap.getPlatformVector()[i]->getPlatformType(), "removablePlatform") == 0 && dynamic_cast<RemovablePlatform*>(nextMap.getPlatformVector()[i])->getFlag() == true){
-            for (int j = 0; j < nextMap.getPlatformQuantityConst(); j++)
-                *dynamic_cast<RemovablePlatform*>(map.getPlatformVector()[j]) = *dynamic_cast<RemovablePlatform*>(nextMap.getPlatformVector()[j]);
-        }
-    }*/
-    ///remake///
     map.deletePlatforms();
     for (int i = 0; i < nextMap.getPlatformQuantityConst(); i++){
         const char* platformType = nextMap.getPlatformVector()[i]->getPlatformType();
@@ -122,15 +110,8 @@ void Camera::randomisePositionForNewMapPlatforms(Map &nextMap){
 void Camera::MapNextLvlProcessing(Map &nextMap, Map &map, Scores &scores, PlatformAppearanceProbability &appearanceProbability){
     int previousQuantity = nextMap.getPlatformQuantityConst();
     scores.organisePlatformsQuantity(map, nextMap);
-    int currentQuantity = nextMap.getPlatformQuantityConst();
-    if (previousQuantity > currentQuantity){
-        nextMap.deletePlatforms();
-        nextMap.generatePlatforms(false, scores.getScoresConst(), appearanceProbability);
-    }
-    else {
-        nextMap.deletePlatforms();
-        nextMap.generatePlatforms(false, scores.getScoresConst(), appearanceProbability);
-    }
+    nextMap.deletePlatforms();
+    nextMap.generatePlatforms(false, scores.getScoresConst(), appearanceProbability);
     map.setPlatformQuantity(previousQuantity);
 }
 

@@ -4,6 +4,7 @@
 #include "GameEngine.h"
 #include "Camera.h"
 #include "Scores.h"
+#include "Font.h"
 #include <iostream>
 //#include <ctime>
 
@@ -19,6 +20,8 @@ int main() {
     Doodler doodler;
     Camera camera;
     GameEngine gameEngine;
+    Font font;
+    std::string scoresString;
 
 
     camera.getView().setCenter(BACKGROUNDWIDTH / 2, BACKGROUNDHEIGHT / 2);
@@ -64,7 +67,10 @@ int main() {
         bool checkFlag2 = gameEngine.twitchingPlatformMechanic(map.getPlatformVector());
         gameEngine.twitchingPlatformMechanic(nextMap.getPlatformVector(), checkFlag2);
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        scores.printScores();
+        //scores.printScores();
+        std::cout << "Background center: " << map.getMapSprite().getPosition().y << "\n";
+        scores.drawScores(map.getMapSprite().getPosition().y, font.getText(), scoresString, window);
+
 
         window.display();
         //std::cout << "FPS: " << CLOCKS_PER_SEC / static_cast<double>((clock() - t1) * 10) << "\n";

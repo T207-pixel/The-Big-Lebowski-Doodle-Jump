@@ -28,6 +28,8 @@ const char *FILENAMEREMOVABLEPLATFORM = "/home/tim/C++/sfml/doodleJump/textures/
 
 const char *FILEMAMETWITCHINGPLATFORM = "/home/tim/C++/sfml/doodleJump/textures/twitching_platforms/pivo_small_cut.png";
 
+const char *FILENAMEFONT = "/home/tim/C++/sfml/doodleJump/font/Jack-Brusher-51.ttf";
+
 //FALLING PLATFORM CONSTANTS
 const float QUANTITYOFFRAMESFALLPLAT = 40;
 const float XPLATFORMSTARTPOSITION = 44.5;  //OK

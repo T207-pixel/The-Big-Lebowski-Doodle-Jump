@@ -17,6 +17,8 @@ public:
     const sf::View &getViewConst();
     void setPosition(const float &currentPosition);
     void setNewPosition(const Doodler &doodler);
+    float getNewPosition() const;   //for drawing
+    float getPosition() const;
     void ifUpperThanCamLvl(const Doodler &doodler);
     void moveCamera(Doodler& doodler, sf::Sprite &mapSprite, Scores &scores);
     void putDown(Map &map, Map &nextMap, Doodler &doodler, Scores &scores, PlatformAppearanceProbability &appearanceProbability);

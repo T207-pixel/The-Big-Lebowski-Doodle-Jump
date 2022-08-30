@@ -8,6 +8,7 @@
 #include "RemovablePlatform.h"
 #include "TwitchingPlatform.h"
 #include "PlatformAppearanceProbability.h"
+#include "Font.h"
 
 class Map{
 private:

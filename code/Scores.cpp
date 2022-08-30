@@ -1,5 +1,12 @@
 #include "Scores.h"
 
+template <typename T>
+std::string toString(T val){
+    std::ostringstream oss;
+    oss << val;
+    return oss.str();
+}
+
 int formulaPlatformQuantity(const float &score){
     int platformQuantity = ((STARTPLATFORMQUANTITY - ENDPLATFORMQUANTITY) / pow(M_E, 0.03 * sqrt(score)) ) + ENDPLATFORMQUANTITY;   // find right parameter 0.03
     return platformQuantity;
@@ -21,8 +28,7 @@ void Scores::setScores(const float &currentScore){  // also, should draw scores 
     scores = currentScore;
 }
 
-//make private
-void Scores::organisePlatformsQuantity(Map &map, Map &newMap){   // test version
+void Scores::organisePlatformsQuantity(Map &map, Map &newMap) const{   // test version
     if (map.getPlatformQuantityConst() > formulaPlatformQuantity(scores)){
         map.setPlatformQuantity(formulaPlatformQuantity(scores));
         newMap.setPlatformQuantity(formulaPlatformQuantity(scores));
@@ -32,3 +38,12 @@ void Scores::organisePlatformsQuantity(Map &map, Map &newMap){   // test version
 void Scores::printScores(){
     std::cout << "Current score: " << scores << "\n";
 }
+
+void Scores::drawScores(const float centerCoordinate, sf::Text text, std::string scoresStr, sf::RenderWindow &window) const{
+    scoresStr = toString(int(scores));
+    text.setString(scoresStr);
+    text.setPosition(25, centerCoordinate - BACKGROUNDHEIGHT / 2);
+    window.draw(text);
+}
+
+

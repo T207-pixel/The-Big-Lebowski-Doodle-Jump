@@ -3,6 +3,8 @@
 #include <cmath>
 #include <iostream>
 #include <string.h>
+#include <string>
+#include <sstream>
 //SIZE OF BACKGROUND
 extern const float BACKGROUNDWIDTH;
 extern const float BACKGROUNDHEIGHT;
@@ -60,3 +62,5 @@ extern const char *FILENAMEREMOVABLEPLATFORM;
 extern const char *FILEMAMETWITCHINGPLATFORM;
 extern const float HORIZONTALSPEED;
 extern const float MAXDISTANCE;
+//FONT FILENAME
+extern const char *FILENAMEFONT;
