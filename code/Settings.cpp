@@ -20,15 +20,18 @@ const char *FILENAMEPLATFORM = "/home/tim/C++/sfml/doodleJump/textures/usual_pla
 const char* FILENAMEDISAPPEARINGPLATFORM = "/home/tim/C++/sfml/doodleJump/textures/disappearing_platform/kover _cut.png" ;
 
 const char *FILENAMEBREAKINGPLATFORM = "/home/tim/C++/sfml/doodleJump/textures/breaking_platform/kosyakkk_single.png";
-const char *FILENAMEBREAKINGPLATFORMSET = "/home/tim/C++/sfml/doodleJump/textures/breaking_platform/kosyak40.png"; // change
+const char *FILENAMEBREAKINGPLATFORMSET = "/home/tim/C++/sfml/doodleJump/textures/breaking_platform/kosyak40.png";
 
-const char *FILENAMEHORIZONTALPLATFORM = "/home/tim/C++/sfml/doodleJump/textures/horizontal_platform/keglya.png";
+const char *FILENAMEHORIZONTALPLATFORM = "/home/tim/C++/sfml/doodleJump/textures/horizontal_platform/keglya2.png";
 
 const char *FILENAMEREMOVABLEPLATFORM = "/home/tim/C++/sfml/doodleJump/textures/removing_platform/palets .png";
 
 const char *FILEMAMETWITCHINGPLATFORM = "/home/tim/C++/sfml/doodleJump/textures/twitching_platforms/pivo_small_cut.png";
 
 const char *FILENAMEFONT = "/home/tim/C++/sfml/doodleJump/font/Jack-Brusher-51.ttf";
+
+const char *FILEMAMEMENU = "/home/tim/C++/sfml/doodleJump/textures/menu/bar.png";
+const char *FILENAMEPLAYBUTTON = "/home/tim/C++/sfml/doodleJump/textures/menu/play.png";
 
 //FALLING PLATFORM CONSTANTS
 const float QUANTITYOFFRAMESFALLPLAT = 40;
@@ -42,8 +45,8 @@ const float SIDESPEED = 2.8;          //OK
 const float STARTSPEEDY = -4.5;       //OK
 const float ACCELERATION = 0.03;      //OK
 //QUANTITY OF PLATFORMS IN THE GAME IN BEGINNING
-const float STARTPLATFORMQUANTITY = 12;//25
-const float ENDPLATFORMQUANTITY = 12;
+const float STARTPLATFORMQUANTITY = 25;//25
+const float ENDPLATFORMQUANTITY = 12;//12
 //CAMERA PARAMETERS
 const float CAMERALEVEL = 800;        //OK
 //START SCORES

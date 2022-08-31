@@ -2,32 +2,33 @@
 #include "GameEngine.h"
 #include "Settings.h"
 
-void GameEngine::gotOnPlatform(Doodler &doodler, std::vector<Platform*> &platform, float platformQuantity){
-    //Y AXIS
-    for (int i = 0; i < platformQuantity; i++) {
-        bool flag = collision(doodler, platform, platformQuantity, i);
-        if (flag && (strcmp(platform[i]->getPlatformType(), "usualPlatform") == 0 || flag && strcmp(platform[i]->getPlatformType(), "horizontalPlatform") == 0)){
-            doodler.setDoodlerSpeedY(STARTSPEEDY);  // further, make in method to avoid duplication of code
-            doodler.basicJump();
-        }
-        if (flag && strcmp(platform[i]->getPlatformType(), "fallingPlatform") == 0) {
-            if (dynamic_cast<FallingPlatform *>(platform[i])->getFallingSpeedConst() < MIDDLEFALLINGPLATFORMSPEED)
-                dynamic_cast<FallingPlatform *>(platform[i])->setPlatformFallingSpeed(MIDDLEFALLINGPLATFORMSPEED);
-        }
-        if (flag && strcmp(platform[i]->getPlatformType(), "disappearingPlatform") == 0){
-            doodler.setDoodlerSpeedY(STARTSPEEDY);
-            doodler.basicJump();
-            dynamic_cast<DisappearingPlatform*>(platform[i])->setPositiveFlag();
-        }
-        if (flag && strcmp(platform[i]->getPlatformType(), "removablePlatform") == 0){
-            doodler.setDoodlerSpeedY(STARTSPEEDY);
-            doodler.basicJump();
-            dynamic_cast<RemovablePlatform*>(platform[i])->setPositiveFlag();
-        }
-        if (flag && strcmp(platform[i]->getPlatformType(), "twitchingPlatform") == 0){
-            doodler.setDoodlerSpeedY(STARTSPEEDY);
-            doodler.basicJump();
-            dynamic_cast<TwitchingPlatform*>(platform[i])->setPositiveFlag();
+void GameEngine::gotOnPlatform(Doodler &doodler, std::vector<Platform*> &platform, float platformQuantity, const bool ifShouldCheck){
+    if (ifShouldCheck){
+        for (int i = 0; i < platformQuantity; i++) {
+            bool flag = collision(doodler, platform, platformQuantity, i);
+            if (flag && (strcmp(platform[i]->getPlatformType(), "usualPlatform") == 0 || flag && strcmp(platform[i]->getPlatformType(), "horizontalPlatform") == 0)){
+                doodler.setDoodlerSpeedY(STARTSPEEDY);
+                doodler.basicJump();
+            }
+            if (flag && strcmp(platform[i]->getPlatformType(), "fallingPlatform") == 0) {
+                if (dynamic_cast<FallingPlatform *>(platform[i])->getFallingSpeedConst() < MIDDLEFALLINGPLATFORMSPEED)
+                    dynamic_cast<FallingPlatform *>(platform[i])->setPlatformFallingSpeed(MIDDLEFALLINGPLATFORMSPEED);
+            }
+            if (flag && strcmp(platform[i]->getPlatformType(), "disappearingPlatform") == 0){
+                doodler.setDoodlerSpeedY(STARTSPEEDY);
+                doodler.basicJump();
+                dynamic_cast<DisappearingPlatform*>(platform[i])->setPositiveFlag();
+            }
+            if (flag && strcmp(platform[i]->getPlatformType(), "removablePlatform") == 0){
+                doodler.setDoodlerSpeedY(STARTSPEEDY);
+                doodler.basicJump();
+                dynamic_cast<RemovablePlatform*>(platform[i])->setPositiveFlag();
+            }
+            if (flag && strcmp(platform[i]->getPlatformType(), "twitchingPlatform") == 0){
+                doodler.setDoodlerSpeedY(STARTSPEEDY);
+                doodler.basicJump();
+                dynamic_cast<TwitchingPlatform*>(platform[i])->setPositiveFlag();
+            }
         }
     }
 }
@@ -105,7 +106,7 @@ void GameEngine::DisappearingPlatformMechanic(std::vector<Platform*> &platform){
                     dynamic_cast<DisappearingPlatform*>(i)->increaseComparable();
                 }
                 if (dynamic_cast<DisappearingPlatform*>(i)->getFramesCounter() >= dynamic_cast<DisappearingPlatform*>(i)->getComparable() && dynamic_cast<DisappearingPlatform*>(i)->getFramesCounter() == 50){
-                    std::cout << "50 stable\n";
+                    //std::cout << "50 stable\n";
                     dynamic_cast<DisappearingPlatform*>(i)->getPlatformSprite().move(2 * BACKGROUNDWIDTH, 0);
                     dynamic_cast<DisappearingPlatform*>(i)->resetFrames();
                     dynamic_cast<DisappearingPlatform*>(i)->resetComparable();
@@ -177,3 +178,15 @@ bool GameEngine::twitchingPlatformMechanic(std::vector<Platform*> &platform, boo
         }
     }
 }
+
+bool GameEngine::fall(const float currentCenter, const float doodlerPositionY, const float doodlerHalf){
+    if (doodlerPositionY > currentCenter + BACKGROUNDHEIGHT / 2 - doodlerHalf)
+        return false;
+}
+
+bool GameEngine::gameOver(const float currentCenter, const float doodlerPositionY, const float doodlerHalf){
+    if (doodlerPositionY > currentCenter + BACKGROUNDHEIGHT / 2 + doodlerHalf)
+        return true;
+}
+
+

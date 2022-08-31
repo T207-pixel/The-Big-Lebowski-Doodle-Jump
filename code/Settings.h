@@ -64,3 +64,5 @@ extern const float HORIZONTALSPEED;
 extern const float MAXDISTANCE;
 //FONT FILENAME
 extern const char *FILENAMEFONT;
+extern const char *FILEMAMEMENU;
+extern const char *FILENAMEPLAYBUTTON;

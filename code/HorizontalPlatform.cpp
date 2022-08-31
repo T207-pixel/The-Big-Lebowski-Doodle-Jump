@@ -37,7 +37,6 @@ void HorizontalPlatform::speedDependencyOnPointsInit(const int scores){
         horizontalSpeed =  (DINAMICCOEF * scores + STARTHORIZONTALPLATFORMSPEED) * positiveOrNegativeUnit(); // [(0, 0.3), (50 000, 1)]
     else
         horizontalSpeed = MAXHORIZONTALSPEED * positiveOrNegativeUnit();
-    std::cout << "Platform speed: " << horizontalSpeed << "\n";
 }
 
 void HorizontalPlatform::operator=(HorizontalPlatform &right){
