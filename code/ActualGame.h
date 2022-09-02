@@ -7,10 +7,9 @@
 #include "Scores.h"
 #include "Font.h"
 #include <iostream>
-//#include <ctime>
 
 class ActualGame{
 public:
     ActualGame();
-    int actualGamePlay(sf::RenderWindow &window, int &flag);
+    int actualGamePlay(sf::RenderWindow &window, int &flag, Scores &scores);
 };

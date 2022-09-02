@@ -2,13 +2,11 @@
 #include "Doodler.h"
 #include <iostream>
 
-Doodler::Doodler(){
+Doodler::Doodler() : doodlerSpeedY(STARTSPEEDY), doodlerSpeedX(0){
     doodlerTexture.loadFromFile(FILENAMEDOODLERRIGHT);
     doodlerSprite.setTexture(doodlerTexture);
     doodlerWidth = doodlerSprite.getLocalBounds().width;
     doodlerHeight = doodlerSprite.getLocalBounds().height;
-    doodlerSpeedY = STARTSPEEDY;
-    doodlerSpeedX = 0;
     doodlerSprite.setOrigin(doodlerWidth/2, doodlerHeight/2);
     doodlerSprite.setPosition(BACKGROUNDWIDTH/2,  BACKGROUNDHEIGHT - 155);
 }
@@ -88,8 +86,6 @@ void Doodler::basicJump(){
     doodlerSprite.move(0, speed);
     speed += ACCELERATION;
     setDoodlerSpeedY(speed);
-    if (doodlerSprite.getPosition().y >= BACKGROUNDHEIGHT - doodlerSprite.getLocalBounds().height / 2) //tmp floor
-        setDoodlerSpeedY(STARTSPEEDY);
 }
 
 void Doodler::movementSides(){

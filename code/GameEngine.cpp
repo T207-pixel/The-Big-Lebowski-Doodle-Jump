@@ -180,7 +180,7 @@ bool GameEngine::twitchingPlatformMechanic(std::vector<Platform*> &platform, boo
 }
 
 bool GameEngine::fall(const float currentCenter, const float doodlerPositionY, const float doodlerHalf){
-    if (doodlerPositionY > currentCenter + BACKGROUNDHEIGHT / 2 - doodlerHalf)
+    if (doodlerPositionY >= currentCenter + BACKGROUNDHEIGHT / 2 - doodlerHalf)
         return false;
 }
 

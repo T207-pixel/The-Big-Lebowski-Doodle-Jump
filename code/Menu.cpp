@@ -15,8 +15,9 @@ void Menu::menuMechanic(sf::RenderWindow &window, int &flag){
      if (flag == 0){
         drawMenu(window);
         if (ifButtonIsPressed(window)){
-            //ANIMATION
             flag = 1;
+            buttonAnimation(window);
+            //doodler animation
         }
     }
 }
@@ -38,3 +39,24 @@ bool Menu::ifButtonIsPressed(sf::RenderWindow &window) const{
     }
 }
 
+void Menu::buttonAnimation(sf::RenderWindow &window){
+    float frames = 50.0;
+    int transparency = 255;
+    while (frames != 0){
+        if (static_cast<int>(frames) % 10 == 0){
+            transparency -= 50;
+            playButtonSprite.setColor(sf::Color(255, 255, 255, transparency));
+        }
+        frames--;
+        drawMenu(window);
+    }
+    transparency = 0;
+    while (frames < 50){
+        if (static_cast<int>(frames) % 10 == 0){
+            transparency += 50;
+            playButtonSprite.setColor(sf::Color(255, 255, 255, transparency));
+        }
+        frames++;
+        drawMenu(window);
+    }
+}

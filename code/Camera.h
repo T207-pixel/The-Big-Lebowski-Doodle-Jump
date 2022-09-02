@@ -12,6 +12,7 @@ private:
     float newPosition;
 public:
     Camera();
+    void resetCameraPosition();
     sf::View& getView();
     const float &getPositionConst() const;
     const sf::View &getViewConst();

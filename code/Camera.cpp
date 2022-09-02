@@ -7,6 +7,10 @@ Camera::Camera(){
     newPosition = CAMERALEVEL;
 }
 
+void Camera::resetCameraPosition(){
+    view.setCenter(BACKGROUNDWIDTH / 2, BACKGROUNDHEIGHT / 2);
+}
+
 sf::View &Camera::getView(){
     return view;
 }

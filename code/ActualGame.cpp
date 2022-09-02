@@ -2,10 +2,9 @@
 
 ActualGame::ActualGame() {}
 
-int ActualGame::actualGamePlay(sf::RenderWindow &window, int &flag){
+int ActualGame::actualGamePlay(sf::RenderWindow &window, int &flag, Scores &scores){
     if (flag == 1){
         PlatformAppearanceProbability appearanceProbability;
-        Scores scores;
         Map map(STARTPLATFORMQUANTITY, true, scores.getScoresConst(), appearanceProbability);
         Map nextMap(STARTPLATFORMQUANTITY, false, scores.getScoresConst(), appearanceProbability);
         Doodler doodler;
@@ -59,6 +58,8 @@ int ActualGame::actualGamePlay(sf::RenderWindow &window, int &flag){
             scores.drawScores(map.getMapSprite().getPosition().y, font.getText(), scoresString, window);
             window.display();
         }
+        camera.resetCameraPosition();
+        window.setView(camera.getViewConst());
         flag = 2;
     }
 }

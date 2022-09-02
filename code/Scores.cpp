@@ -46,4 +46,12 @@ void Scores::drawScores(const float centerCoordinate, sf::Text text, std::string
     window.draw(text);
 }
 
+void Scores::drawGameOverScore(float x, float y, unsigned size, sf::Text text, std::string scoresStr, sf::RenderWindow &window){
+    scoresStr = toString(int(scores));
+    text.setString(scoresStr);
+    text.setPosition(x, y);
+    text.setCharacterSize(size);
+    window.draw(text);
+}
+
 
