@@ -7,6 +7,14 @@ std::string toString(T val){
     return oss.str();
 }
 
+template<typename T>
+T fromString(const std::string& s){
+    std::istringstream iss(s);
+    T res;
+    iss >> res;
+    return res;
+}
+
 int formulaPlatformQuantity(const float &score){
     int platformQuantity = ((STARTPLATFORMQUANTITY - ENDPLATFORMQUANTITY) / pow(M_E, 0.03 * sqrt(score)) ) + ENDPLATFORMQUANTITY;   // find right parameter 0.03
     return platformQuantity;
@@ -54,4 +62,16 @@ void Scores::drawGameOverScore(float x, float y, unsigned size, sf::Text text, s
     window.draw(text);
 }
 
+void Scores::loadFromFile(){
+    std::string bestScoreStr;
+    std::ifstream in("/home/tim/C++/sfml/doodleJump/scores/bestScore.txt");
+    getline(in, bestScoreStr);
+    in.close();
+    scores = fromString<int>(bestScoreStr);
+}
 
+void Scores::storeInFile(float currentScore){
+    std::ofstream out;
+    out.open("/home/tim/C++/sfml/doodleJump/scores/bestScore.txt");
+    out << currentScore;
+}

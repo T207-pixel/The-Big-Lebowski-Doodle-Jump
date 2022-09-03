@@ -21,7 +21,7 @@ void GameOver::gameOverMechanic(sf::RenderWindow &window, int &flag, Scores &cur
     if (flag == 2){
         if (currentScore.getScores() > bestScore.getScores()){
             bestScore.setScores(currentScore.getScores());
-            // +++ load in file new info
+            bestScore.storeInFile(currentScore.getScores());
         }
         drawGameOverMenu(window, currentScore, bestScore);
         if (ifPlayButtonIsPressed(window)){

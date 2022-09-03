@@ -5,7 +5,8 @@
 
 int main() {
     Scores currentScore;
-    Scores bestScore;// further load from file
+    Scores bestScore;
+    bestScore.loadFromFile();
     int flag = 0;
     Menu menu;
     ActualGame actualGame;

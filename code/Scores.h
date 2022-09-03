@@ -17,4 +17,6 @@ public:
     void printScores();
     void drawScores(float centerCoordinate, sf::Text text, std::string scoresStr, sf::RenderWindow &window) const;
     void drawGameOverScore(float x, float y, unsigned size, sf::Text text, std::string scoresStr, sf::RenderWindow &window);
+    void loadFromFile();
+    void storeInFile(float currentScore);
 };

@@ -5,6 +5,8 @@
 #include <string.h>
 #include <string>
 #include <sstream>
+#include <iostream>
+#include <fstream>
 //SIZE OF BACKGROUND
 extern const float BACKGROUNDWIDTH;
 extern const float BACKGROUNDHEIGHT;
