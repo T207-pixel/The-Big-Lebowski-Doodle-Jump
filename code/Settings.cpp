@@ -33,7 +33,8 @@ const char *FILENAMEFONT = "/home/tim/C++/sfml/doodleJump/font/Jack-Brusher-51.t
 const char *FILEMAMEMENU = "/home/tim/C++/sfml/doodleJump/textures/menu/bar.png";
 const char *FILENAMEPLAYBUTTON = "/home/tim/C++/sfml/doodleJump/textures/menu/play.png";
 
-const char *FILENAMEGAMEOVER = "/home/tim/C++/sfml/doodleJump/textures/gameOver/shelf.png";
+const char *FILENAMEGAMEOVER = "/home/tim/C++/sfml/doodleJump/textures/gameOver/Boots_Back2.png";
+const char *FILENAMEMENUBUTTON = "/home/tim/C++/sfml/doodleJump/textures/menu/menu.png";
 
 //FALLING PLATFORM CONSTANTS
 const float QUANTITYOFFRAMESFALLPLAT = 40;

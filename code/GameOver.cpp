@@ -11,10 +11,10 @@ GameOver::GameOver(){
     playButtonSprite.setOrigin(playButtonSprite.getLocalBounds().width / 2, playButtonSprite.getLocalBounds().height / 2);
     playButtonSprite.setPosition(130, 910);
 
-    menuButtonTexture.loadFromFile(FILENAMEPLAYBUTTON);//change
+    menuButtonTexture.loadFromFile(FILENAMEMENUBUTTON);
     menuButtonSprite.setTexture(menuButtonTexture);
     menuButtonSprite.setOrigin(menuButtonSprite.getLocalBounds().width / 2, menuButtonSprite.getLocalBounds().height / 2);
-    menuButtonSprite.setPosition(450, 885);
+menuButtonSprite.setPosition(470, 905);
 }
 
 void GameOver::gameOverMechanic(sf::RenderWindow &window, int &flag, Scores &currentScore, Scores &bestScore){
@@ -45,8 +45,8 @@ void GameOver::drawGameOverMenu(sf::RenderWindow &window, Scores &currentScore, 
     window.draw(backgroundSprite);
     window.draw(playButtonSprite);
     window.draw(menuButtonSprite);
-    currentScore.drawGameOverScore(100, 100, 60, font.getText(), scoresString, window);
-    bestScore.drawGameOverScore(100, 200, 60, font.getText(), scoresString, window);
+    currentScore.drawGameOverScore(170, 270, 37, font.getText(), scoresString, window);
+    bestScore.drawGameOverScore(255, 216, 37, font.getText(), scoresString, window);
     window.display();
 }
 

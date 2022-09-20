@@ -27,7 +27,7 @@ ___
 ##Main game mechanic and remarks
 ___
 - Code contains two _Map_ objects _(map, nextMap)_.<br>
-_Map_ is located lower than _nextMap_, and player is able only to see area which is shown with camera scale. Actually
+_map_ is located lower than _nextMap_, and player is able only to see area which is shown with camera scale. Actually
 camera's area of visibility is the same as scale of the map. That is why camera smoothly goes up, until it's center does not
 stay on same position as _nextMap's_ center. If camera and _nextMap_ have same center I update _nextMap_ by creating new
 platforms on it, also I copy previous _nextMap_ platforms (their entities), delete _map_ platforms and fill it with

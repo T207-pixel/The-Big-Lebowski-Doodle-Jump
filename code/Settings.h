@@ -69,3 +69,4 @@ extern const char *FILENAMEFONT;
 extern const char *FILEMAMEMENU;
 extern const char *FILENAMEPLAYBUTTON;
 extern const char *FILENAMEGAMEOVER;
+extern const char *FILENAMEMENUBUTTON;
