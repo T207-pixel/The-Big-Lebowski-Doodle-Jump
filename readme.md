@@ -13,18 +13,18 @@ To control the character, press "**A**" button if you prefer to direct him to th
 prefer to direct him to fhe right.
 ___
 
-##Authors
+## Authors
 ___
 Code: **Novikov Tim** <br>
 Artist/designer: **[Victoria Koroleva](https://vk.com/vwika_artt)**
 ___
 
-##Preview
+## Preview
 ___
 ![](/home/tim/Загрузки/2291111_2000.gif)
 ___
 
-##Main game mechanic and remarks
+## Main game mechanic and remarks
 ___
 - Code contains two _Map_ objects _(map, nextMap)_.<br>
 _map_ is located lower than _nextMap_, and player is able only to see area which is shown with camera scale. Actually
@@ -37,7 +37,7 @@ previous _nextMap_ platform entities, moreover I put down camera to _map_ center
 - Best score is loads from file in the beginning. Also, best score stores in file if it was beaten.
 ___
 
-##Type of platforms
+## Type of platforms
 ___
 1. `Usuall`: It is the simplest type of platform, because it is static.
 2. `Falling`: It is fake animated type of platform which breaks if you step on it.
@@ -50,7 +50,7 @@ on new position.
 of them. So all platforms twitch in random direction sharply.
 ___
 
-##Development tools
+## Development tools
 ___
 - **Programming language: C++20**
 - **Audio and graphics lib: SFML 2.5.1**
@@ -58,7 +58,7 @@ ___
 - **std::rand**
 ___
 
-##Run without compilation
+## Run without compilation
 ___
 1. **Follow the link below to (link) to google disk**
 2. **Download the _Big_Lebowski_Doodle.rar_ file from there;**
