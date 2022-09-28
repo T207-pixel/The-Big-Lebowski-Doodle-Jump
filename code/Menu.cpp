@@ -65,7 +65,7 @@ void Menu::buttonAnimation(sf::RenderWindow &window){
 void Menu::menuAnimation(sf::RenderWindow &window){
     for (int j = 0; j < 6; j++){
         for (int i = 0; i < 9; i++){
-            std::this_thread::sleep_for(std::chrono::milliseconds(40));
+            std::this_thread::sleep_for(std::chrono::milliseconds(50));
             menuSprite.move(-1 * (BACKGROUNDWIDTH), 0);
             drawMenu(window);
             if (i == 8)
