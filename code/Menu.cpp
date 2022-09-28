@@ -18,6 +18,7 @@ void Menu::menuMechanic(sf::RenderWindow &window, int &flag){
             flag = 1;
             buttonAnimation(window);
             //doodler animation
+            menuAnimation(window);
         }
     }
 }
@@ -59,4 +60,18 @@ void Menu::buttonAnimation(sf::RenderWindow &window){
         frames++;
         drawMenu(window);
     }
+}
+
+void Menu::menuAnimation(sf::RenderWindow &window){
+    for (int j = 0; j < 6; j++){
+        for (int i = 0; i < 9; i++){
+            std::this_thread::sleep_for(std::chrono::milliseconds(40));
+            menuSprite.move(-1 * (BACKGROUNDWIDTH), 0);
+            drawMenu(window);
+            if (i == 8)
+                menuSprite.move(BACKGROUNDWIDTH * 10, -1 * BACKGROUNDHEIGHT);
+        }
+    }
+    menuSprite.setOrigin(BACKGROUNDWIDTH / 2, BACKGROUNDHEIGHT / 2);
+    menuSprite.setPosition(menuSprite.getOrigin());
 }

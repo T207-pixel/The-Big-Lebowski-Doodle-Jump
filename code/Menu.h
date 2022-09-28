@@ -9,7 +9,8 @@ private:
     sf::Mouse mouse;
     void drawMenu(sf::RenderWindow &window) const;
     bool ifButtonIsPressed(sf::RenderWindow &window) const;
-    void buttonAnimation(sf::RenderWindow &window); //animation of button should go in parallel with lebowski in the beginning
+    void buttonAnimation(sf::RenderWindow &window);
+    void menuAnimation(sf::RenderWindow &window);
 public:
     Menu();
     void menuMechanic(sf::RenderWindow &window, int &flag);

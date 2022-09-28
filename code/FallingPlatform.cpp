@@ -14,8 +14,6 @@ void FallingPlatform::setFallingPlatformTexture(const char* fileName){
     platformTexture.loadFromFile(fileName);
     platformSprite.setTexture(platformTexture);
     platformSprite.setOrigin(platformSprite.getOrigin().x, platformSprite.getOrigin().y);
-    //std::cout << "Start Origin X: " << platformSprite.getOrigin().x << "\n";
-    //std::cout << "Start Origin y: " << platformSprite.getOrigin().y << "\n";
     platformSprite.setTextureRect(sf::IntRect(0, 0, DISTANCETONEXTPLATFORMX, DISTANCETONEXTPLATFORMY));
 }
 

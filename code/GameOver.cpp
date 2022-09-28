@@ -6,10 +6,10 @@ GameOver::GameOver(){
     backgroundSprite.setOrigin(BACKGROUNDWIDTH / 2, BACKGROUNDHEIGHT / 2);
     backgroundSprite.setPosition(BACKGROUNDWIDTH / 2, BACKGROUNDHEIGHT / 2);
 
-    playButtonTexture.loadFromFile(FILENAMEPLAYBUTTON);//change
+    playButtonTexture.loadFromFile(FILENAMEPLAYAGAINBUTTON);
     playButtonSprite.setTexture(playButtonTexture);
     playButtonSprite.setOrigin(playButtonSprite.getLocalBounds().width / 2, playButtonSprite.getLocalBounds().height / 2);
-    playButtonSprite.setPosition(130, 910);
+    playButtonSprite.setPosition(135, 910);
 
     menuButtonTexture.loadFromFile(FILENAMEMENUBUTTON);
     menuButtonSprite.setTexture(menuButtonTexture);

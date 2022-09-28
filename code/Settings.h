@@ -7,6 +7,8 @@
 #include <sstream>
 #include <iostream>
 #include <fstream>
+#include <thread>
+#include <chrono>
 //SIZE OF BACKGROUND
 extern const float BACKGROUNDWIDTH;
 extern const float BACKGROUNDHEIGHT;
@@ -70,3 +72,4 @@ extern const char *FILEMAMEMENU;
 extern const char *FILENAMEPLAYBUTTON;
 extern const char *FILENAMEGAMEOVER;
 extern const char *FILENAMEMENUBUTTON;
+extern const char *FILENAMEPLAYAGAINBUTTON;

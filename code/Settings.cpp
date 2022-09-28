@@ -3,17 +3,17 @@
 const float BACKGROUNDWIDTH = 640;    //OK
 const float BACKGROUNDHEIGHT = 960;   //OK
 //SIZE OF DOODLER
-const float OFFSETNOSE = 23;          //OK
-const float OFFSETBACK = 12;          //OK
+const float OFFSETNOSE = 12;          //23
+const float OFFSETBACK = 18;          //12
 //FRAMES
 const int FRAMELIMIT = 240;           //OK
 //PATH TO THE FILES
 const char *FILENAMEBACKGROUND = "/home/tim/C++/sfml/doodleJump/textures/background/smoked_rug.png";
 
-const char *FILENAMEDOODLERRIGHT = "/home/tim/C++/sfml/doodleJump/textures/doomerDoodle_small_tima.png";
-const char *FILEMAMEDOODLERLEFT = "/home/tim/C++/sfml/doodleJump/textures/doomerDoodle_small_tima_left.png";
-const char *FILENAMEDOODLERBENTLEGSLEFT = "/home/tim/C++/sfml/doodleJump/textures/doomerDoodle_small_legs_left.png";
-const char *FILENAMEDOODLERBENTLEGSRIGHT = "/home/tim/C++/sfml/doodleJump/textures/doomerDoodle_small_legs_right.png";
+const char *FILENAMEDOODLERRIGHT = "/home/tim/C++/sfml/doodleJump/textures/doodler_dude/DoodleRight1.png";
+const char *FILEMAMEDOODLERLEFT = "/home/tim/C++/sfml/doodleJump/textures/doodler_dude/DoodleLeft1.png";
+const char *FILENAMEDOODLERBENTLEGSLEFT = "/home/tim/C++/sfml/doodleJump/textures/doodler_dude/DoodleBentLeft1.png";
+const char *FILENAMEDOODLERBENTLEGSRIGHT = "/home/tim/C++/sfml/doodleJump/textures/doodler_dude/DoodleBentRight1.png";
 
 const char *FILENAMEPLATFORM = "/home/tim/C++/sfml/doodleJump/textures/usual_platform/keglya.png";
 
@@ -30,11 +30,12 @@ const char *FILEMAMETWITCHINGPLATFORM = "/home/tim/C++/sfml/doodleJump/textures/
 
 const char *FILENAMEFONT = "/home/tim/C++/sfml/doodleJump/font/Jack-Brusher-51.ttf";
 
-const char *FILEMAMEMENU = "/home/tim/C++/sfml/doodleJump/textures/menu/bar.png";
+const char *FILEMAMEMENU = "/home/tim/C++/sfml/doodleJump/textures/menu/anima22.png";
 const char *FILENAMEPLAYBUTTON = "/home/tim/C++/sfml/doodleJump/textures/menu/play.png";
 
 const char *FILENAMEGAMEOVER = "/home/tim/C++/sfml/doodleJump/textures/gameOver/Boots_Back2.png";
-const char *FILENAMEMENUBUTTON = "/home/tim/C++/sfml/doodleJump/textures/menu/menu.png";
+const char *FILENAMEMENUBUTTON = "/home/tim/C++/sfml/doodleJump/textures/gameOver/menu.png";
+const char *FILENAMEPLAYAGAINBUTTON = "/home/tim/C++/sfml/doodleJump/textures/gameOver/play_again.png";
 
 //FALLING PLATFORM CONSTANTS
 const float QUANTITYOFFRAMESFALLPLAT = 40;
