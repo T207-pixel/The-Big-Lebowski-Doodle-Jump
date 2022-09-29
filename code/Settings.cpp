@@ -2,40 +2,40 @@
 //SIZE OF BACKGROUND
 const float BACKGROUNDWIDTH = 640;    //OK
 const float BACKGROUNDHEIGHT = 960;   //OK
-//SIZE OF DOODLER
-const float OFFSETNOSE = 12;          //23
-const float OFFSETBACK = 18;          //12
+//SIZE OF DOODLER OFFSETS
+const float OFFSETNOSE = 12;          //OK
+const float OFFSETBACK = 18;          //OK
 //FRAMES
 const int FRAMELIMIT = 240;           //OK
 //PATH TO THE FILES
-const char *FILENAMEBACKGROUND = "/home/tim/C++/sfml/doodleJump/textures/background/smoked_rug.png";
+const char *FILENAMEBACKGROUND = "../../textures/background/smoked_rug.png";
 
-const char *FILENAMEDOODLERRIGHT = "/home/tim/C++/sfml/doodleJump/textures/doodler_dude/DoodleRight1.png";
-const char *FILEMAMEDOODLERLEFT = "/home/tim/C++/sfml/doodleJump/textures/doodler_dude/DoodleLeft1.png";
-const char *FILENAMEDOODLERBENTLEGSLEFT = "/home/tim/C++/sfml/doodleJump/textures/doodler_dude/DoodleBentLeft1.png";
-const char *FILENAMEDOODLERBENTLEGSRIGHT = "/home/tim/C++/sfml/doodleJump/textures/doodler_dude/DoodleBentRight1.png";
+const char *FILENAMEDOODLERRIGHT = "../../textures/doodler_dude/DoodleRight1.png";
+const char *FILEMAMEDOODLERLEFT = "../../textures/doodler_dude/DoodleLeft1.png";
+const char *FILENAMEDOODLERBENTLEGSLEFT = "../../textures/doodler_dude/DoodleBentLeft1.png";
+const char *FILENAMEDOODLERBENTLEGSRIGHT = "../../textures/doodler_dude/DoodleBentRight1.png";
 
-const char *FILENAMEPLATFORM = "/home/tim/C++/sfml/doodleJump/textures/usual_platform/keglya.png";
+const char *FILENAMEPLATFORM = "../../textures/usual_platform/keglya.png";
 
-const char* FILENAMEDISAPPEARINGPLATFORM = "/home/tim/C++/sfml/doodleJump/textures/disappearing_platform/kover _cut.png" ;
+const char* FILENAMEDISAPPEARINGPLATFORM = "../../textures/disappearing_platform/kover _cut.png" ;
 
-const char *FILENAMEBREAKINGPLATFORM = "/home/tim/C++/sfml/doodleJump/textures/breaking_platform/kosyakkk_single.png";
-const char *FILENAMEBREAKINGPLATFORMSET = "/home/tim/C++/sfml/doodleJump/textures/breaking_platform/kosyak40.png";
+const char *FILENAMEBREAKINGPLATFORM = "../../textures/breaking_platform/kosyakkk_single.png";
+const char *FILENAMEBREAKINGPLATFORMSET = "../../textures/breaking_platform/kosyak40.png";
 
-const char *FILENAMEHORIZONTALPLATFORM = "/home/tim/C++/sfml/doodleJump/textures/horizontal_platform/keglya2.png";
+const char *FILENAMEHORIZONTALPLATFORM = "../../textures/horizontal_platform/keglya2.png";
 
-const char *FILENAMEREMOVABLEPLATFORM = "/home/tim/C++/sfml/doodleJump/textures/removing_platform/palets .png";
+const char *FILENAMEREMOVABLEPLATFORM = "../../textures/removing_platform/palets .png";
 
-const char *FILEMAMETWITCHINGPLATFORM = "/home/tim/C++/sfml/doodleJump/textures/twitching_platforms/pivo_small_cut.png";
+const char *FILEMAMETWITCHINGPLATFORM = "../../textures/twitching_platforms/pivo_small_cut.png";
 
-const char *FILENAMEFONT = "/home/tim/C++/sfml/doodleJump/font/Jack-Brusher-51.ttf";
+const char *FILENAMEFONT = "../../font/Jack-Brusher-51.ttf";
 
-const char *FILEMAMEMENU = "/home/tim/C++/sfml/doodleJump/textures/menu/anima22.png";
-const char *FILENAMEPLAYBUTTON = "/home/tim/C++/sfml/doodleJump/textures/menu/play.png";
+const char *FILEMAMEMENU = "../../textures/menu/anima22.png";
+const char *FILENAMEPLAYBUTTON = "../../textures/menu/play.png";
 
-const char *FILENAMEGAMEOVER = "/home/tim/C++/sfml/doodleJump/textures/gameOver/Boots_Back2.png";
-const char *FILENAMEMENUBUTTON = "/home/tim/C++/sfml/doodleJump/textures/gameOver/menu.png";
-const char *FILENAMEPLAYAGAINBUTTON = "/home/tim/C++/sfml/doodleJump/textures/gameOver/play_again.png";
+const char *FILENAMEGAMEOVER = "../../textures/gameOver/Boots_Back2.png";
+const char *FILENAMEMENUBUTTON = "../../textures/gameOver/menu.png";
+const char *FILENAMEPLAYAGAINBUTTON = "../../textures/gameOver/play_again.png";
 
 //FALLING PLATFORM CONSTANTS
 const float QUANTITYOFFRAMESFALLPLAT = 40;
@@ -49,8 +49,8 @@ const float SIDESPEED = 2.8;          //OK
 const float STARTSPEEDY = -4.5;       //OK
 const float ACCELERATION = 0.03;      //OK
 //QUANTITY OF PLATFORMS IN THE GAME IN BEGINNING
-const float STARTPLATFORMQUANTITY = 25;//25
-const float ENDPLATFORMQUANTITY = 12;//12
+const float STARTPLATFORMQUANTITY = 25; //OK
+const float ENDPLATFORMQUANTITY = 12;   //OK
 //CAMERA PARAMETERS
 const float CAMERALEVEL = 800;        //OK
 //START SCORES

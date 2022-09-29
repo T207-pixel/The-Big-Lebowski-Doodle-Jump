@@ -64,7 +64,7 @@ void Scores::drawGameOverScore(float x, float y, unsigned size, sf::Text text, s
 
 void Scores::loadFromFile(){
     std::string bestScoreStr;
-    std::ifstream in("/home/tim/C++/sfml/doodleJump/scores/bestScore.txt");
+    std::ifstream in("../../scores/bestScore.txt");
     getline(in, bestScoreStr);
     in.close();
     scores = fromString<int>(bestScoreStr);
@@ -72,6 +72,6 @@ void Scores::loadFromFile(){
 
 void Scores::storeInFile(float currentScore){
     std::ofstream out;
-    out.open("/home/tim/C++/sfml/doodleJump/scores/bestScore.txt");
+    out.open("../../scores/bestScore.txt");
     out << currentScore;
 }

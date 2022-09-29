@@ -19,7 +19,7 @@ int ActualGame::actualGamePlay(sf::RenderWindow &window, int &flag, Scores &scor
         camera.getView().setCenter(BACKGROUNDWIDTH / 2, BACKGROUNDHEIGHT / 2);
         camera.getView().reset(sf::FloatRect(0, 0, BACKGROUNDWIDTH, BACKGROUNDHEIGHT));
 
-        while (gameOverFlag != true){
+        while (!gameOverFlag){
             window.setView(camera.getViewConst());
             window.clear();
             map.drawBackground(window);
