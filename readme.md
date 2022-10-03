@@ -22,6 +22,7 @@ ___
 ## Preview
 ___
 ![Demo](https://github.com/T207-pixel/The-Big-Lebowski-Doodle-Jump/blob/main/demo/demo.gif)
+Here fps is lower than in actual game because of gif format.
 ___
 
 ## Main game mechanic and remarks
