@@ -56,5 +56,8 @@ ___
 - **Audio and graphics lib: SFML 2.5.1**
 - **std::vector<T>**
 - **std::rand**
+<<<<<<< HEAD
 - **std::thread**
 - **std::chrono**
+=======
+>>>>>>> 4525d7e5845ecdd417cb43d564bd89c3cc6327e7
