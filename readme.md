@@ -55,6 +55,8 @@ ___
 ___
 - **Programming language: C++20**
 - **Audio and graphics lib: SFML 2.5.1**
+- **g++ (Ubuntu 9.4.0-1ubuntu1~20.04.1) 9.4.0**
+- **gcc (Ubuntu 9.4.0-1ubuntu1~20.04.1) 9.4.0**
 - **std::vector<T>**
 - **std::rand**
 - **std::thread**
